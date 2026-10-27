@@ -285,7 +285,7 @@ lb.querySelector('.x').onclick=()=>lb.classList.remove('on');lb.querySelector('.
 lb.onclick=e=>{if(e.target===lb)lb.classList.remove('on')};
 addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowRight')step(lang==='ar'?-1:1);if(e.key==='ArrowLeft')step(lang==='ar'?1:-1)});
 const vw=$('#vids');
-for(let k=1;k<=3;k++){const box=document.createElement('div');box.className='vb ph';box.dataset.n='video '+k;vw.append(box);
+for(let k=1;k<=2;k++){const box=document.createElement('div');box.className='vb ph';box.dataset.n='video '+k;vw.append(box);
  const names=[];DIRS.forEach(d=>['video'+k+'.mp4',k+'.mp4','video-'+k+'.mp4','vid'+k+'.mp4','video'+k+'.webm','video'+k+'.mov'].forEach(x=>names.push(d+x)));
  probe(names,'vid',src=>{if(!src)return;box.classList.remove('ph');const v=document.createElement('video');v.src=src;v.controls=true;v.playsInline=true;v.preload='metadata';box.append(v)})}
 
